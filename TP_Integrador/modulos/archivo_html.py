@@ -1,7 +1,8 @@
 
 from modulos.gestor_archivo import Archivo_Informe
 
-
+#hereda de Archivo_Informe, utiliza los metodos de esta y agrega nuevos
+#es una subclase de Archivo_Informe
 class Archivo_Html(Archivo_Informe):
     def __init__(self):
         super().__init__()
@@ -62,10 +63,10 @@ class Archivo_Html(Archivo_Informe):
     def get_archivo(self):
         return self.__archi
     
-from datos.parametros_de_simulacion import Parametros_de_Simulacion   
-if __name__ == '__main__':
-    archihtml = Archivo_Html()
-    ps = Parametros_de_Simulacion()
-    datos = [1, [0, 5, 4, 2, 0, 0, 0], 0.65, 0.9]
-    archihtml.escribir_archivo('archivo', ps, datos)
+# from datos.parametros_de_simulacion import Parametros_de_Simulacion   
+# if __name__ == '__main__':
+#     archihtml = Archivo_Html()
+#     ps = Parametros_de_Simulacion()
+#     datos = [1, [0, 5, 4, 2, 0, 0, 0], 0.65, 0.9]
+#     archihtml.escribir_archivo('archivo', ps, datos)
     

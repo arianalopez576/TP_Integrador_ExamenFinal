@@ -1,6 +1,8 @@
 from datos.parametros_de_simulacion import Parametros_de_Simulacion
 import random
 
+#Asociacion con parametros de simulacion
+#Composicion de MO
 class Cromosoma:
     #composicion con microorganismo
     def __init__(self):

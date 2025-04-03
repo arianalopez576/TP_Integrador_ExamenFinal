@@ -1,13 +1,13 @@
 
 
 from modulos.gestor_archivo import Archivo_Informe
-from datos.parametros_de_simulacion import Parametros_de_Simulacion
 
 from reportlab.pdfgen import canvas
 from textwrap import wrap
 
-
-
+#tiene herencia con Archivo_Informe
+#es una subclase
+#utiliza parametros para escribir el archivo, dependencia
 class Archivo_PDF(Archivo_Informe):
 
     def __init__(self):
@@ -16,6 +16,7 @@ class Archivo_PDF(Archivo_Informe):
     def _crear_archivo(self, p_archivo): 
         p_archivo.drawString(100, 750, 'Datos del programa')
 
+    #polimorfismo, utiliza un metodo que ya esta definido en la clase madre, empleandolo de forma distinta
     def escribir_archivo(self, p_nom_archivo, p_parametros, p_datos):
         if '.pdf' not in p_nom_archivo:
             p_nom_archivo = p_nom_archivo + '.pdf'
@@ -72,8 +73,8 @@ class Archivo_PDF(Archivo_Informe):
         
         archivo.save()  
         
-if __name__ == '__main__':
-    pdf = Archivo_PDF()
-    ps = Parametros_de_Simulacion()
-    p_datos = [10, [5,3,2,1,1], 2.5, 0.9]
-    pdf.escribir_archivo('archi_prueba', ps, p_datos)
+# if __name__ == '__main__':
+#     pdf = Archivo_PDF()
+#     ps = Parametros_de_Simulacion()
+#     p_datos = [10, [5,3,2,1,1], 2.5, 0.9]
+#     pdf.escribir_archivo('archi_prueba', ps, p_datos)

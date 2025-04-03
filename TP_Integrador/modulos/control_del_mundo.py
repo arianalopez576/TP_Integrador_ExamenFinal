@@ -1,11 +1,14 @@
-from modulos.sembrador import Sembrador 
+
 from modulos.poblacion_MO import Poblacion_MO
 from modulos.gestor_de_alimento import Gestor_de_Alimento
 from modulos.poblacion_sembradores import Poblacion_Sembradores
 from datos.parametros_de_simulacion import Parametros_de_Simulacion  
  
 import random
-
+#agregacion con parametros de simulacion, "contiene parametros"
+#agregacion con gestor de alimento
+#agregacion con poblacion semb
+#agregacion con poblacion mo
 class Mundo:    
     def __init__(self):
         self.__parametros = Parametros_de_Simulacion()
@@ -86,9 +89,9 @@ class Mundo:
     def retornar_cantidad_MOs(self):
         return (len(self.__poblacion_MO.devolver_lista_MO()))
     
-    # def retornar_cantidad_MO_vivos(self):
-    #     MO_vivos = self.__poblacion_MO.calcular_cant_MO()
-    #     return MO_vivos
+    def retornar_cantidad_MO_vivos(self):
+        MO_vivos = self.__poblacion_MO.calcular_cant_MO()
+        return MO_vivos
 
     def retornar_inteligencia_promedio(self):
         return self.__poblacion_MO.calcular_inteligencia_promedio()
@@ -139,21 +142,21 @@ class Mundo:
 
 
    
-if __name__ == '__main__':
-    ps = Parametros_de_Simulacion
-    mundo = Mundo()
-    print('el mundo comienza')
-    mundo.vivir()
-    print(mundo.retornar_epoca())
+# if __name__ == '__main__':
+#     ps = Parametros_de_Simulacion
+#     mundo = Mundo()
+#     print('el mundo comienza')
+#     mundo.vivir()
+#     print(mundo.retornar_epoca())
     
-    mundo.vivir()
-    print(mundo.retornar_epoca())
+#     mundo.vivir()
+#     print(mundo.retornar_epoca())
     
-    mundo.vivir()
-    print(mundo.retornar_epoca())
+#     mundo.vivir()
+#     print(mundo.retornar_epoca())
     
-    mundo.vivir()
-    print(mundo.retornar_epoca())
+#     mundo.vivir()
+#     print(mundo.retornar_epoca())
     
     
     

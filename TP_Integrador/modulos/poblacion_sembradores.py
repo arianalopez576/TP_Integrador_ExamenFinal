@@ -1,18 +1,17 @@
 from modulos.sembrador import Sembrador 
-from datos.parametros_de_simulacion import Parametros_de_Simulacion
-from modulos.gestor_de_alimento import Gestor_de_Alimento
-p_s = Parametros_de_Simulacion()
 
+
+#composicion con sembrador
+#agregacion con el mundo, que le pasa parametros de simulacion
 class Poblacion_Sembradores:
     
-    def __init__(self, parametros_simulacion):
+    def __init__(self, p_parametros_simulacion):
         
         self.__lista_sembradores = []
-        for _ in range(parametros_simulacion.dic_parametros['cant_semb_inicial']):
-            sembrador = Sembrador(parametros_simulacion)
+        for _ in range(p_parametros_simulacion.dic_parametros['cant_semb_inicial']):
+            sembrador = Sembrador(p_parametros_simulacion)
             self.__lista_sembradores.append(sembrador)
         
-        # ver esto
         
     def devolver_lista_sem(self):
         return self.__lista_sembradores
@@ -39,17 +38,17 @@ class Poblacion_Sembradores:
     
    
     
-if __name__ == '__main__':
-    ga = Gestor_de_Alimento(p_s)
-    s = Sembrador()
-    s.sembrar_alimento(ga)
-    s.sembrar_alimento(ga)
-    s.sembrar_alimento(ga)
-    poblacion_semb = Poblacion_Sembradores()
-    print(poblacion_semb.devolver_posicion_sembradores())
-    print(poblacion_semb.calcular_cant_sembradores())
+# if __name__ == '__main__':
+#     ga = Gestor_de_Alimento(p_s)
+#     s = Sembrador()
+#     s.sembrar_alimento(ga)
+#     s.sembrar_alimento(ga)
+#     s.sembrar_alimento(ga)
+#     poblacion_semb = Poblacion_Sembradores()
+#     print(poblacion_semb.devolver_posicion_sembradores())
+#     print(poblacion_semb.calcular_cant_sembradores())
     
-    print('datos_comida', poblacion_semb.retornar_posicion_y_cantidad_alimento(ga))
+#     print('datos_comida', poblacion_semb.retornar_posicion_y_cantidad_alimento(ga))
     
     
 #p_s.dic_parametros['cant_semb_inicial']

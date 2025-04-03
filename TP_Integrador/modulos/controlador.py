@@ -3,9 +3,10 @@ from modulos.animador import Animador
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
-matplotlib.use('TkAgg')
 
 
+#agregacion con interfaz modelo simulacion
+#composicion con animador
 class ControladorDeSimulador:
     
     def __init__(self,mundo):
@@ -56,7 +57,7 @@ class ControladorDeSimulador:
         self.__animador.continuar()
     
         
-if __name__ == "__main__":
-    cs = ControladorDeSimulador()
-    cs.simular_y_graficar()
+# if __name__ == "__main__":
+#     cs = ControladorDeSimulador()
+#     cs.simular_y_graficar()
     

@@ -1,19 +1,17 @@
 from modulos.microorganismo import Microorganismo
-from datos.parametros_de_simulacion import Parametros_de_Simulacion
-
 import numpy as np
 
-p_s = Parametros_de_Simulacion()
-
+#composicion con mo
+#agregacion con el mundo, que le devuelve sus parametros de simulacion
 class Poblacion_MO:     
     
-    def __init__(self, parametros_simulacion):
+    def __init__(self, p_parametros_simulacion):
         self.__lista_MO = []
         #se inicializa la lista de MO determinada por el parametro
-        for _ in range(parametros_simulacion.dic_parametros['cant_MO_inicial']):
-            MO = Microorganismo()
+        for _ in range(p_parametros_simulacion.dic_parametros['cant_MO_inicial']):
+            MO = Microorganismo(p_parametros_simulacion)
             self.__lista_MO.append(MO)
-        self.__parametros = parametros_simulacion
+        self.__parametros = p_parametros_simulacion
         
     #funcion para agregar MO que nacen, si la funcion tiene un indice, se modifica en ese lugar de la lista
     def set_MO(self, MO, indice = None):

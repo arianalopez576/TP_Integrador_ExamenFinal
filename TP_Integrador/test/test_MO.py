@@ -35,7 +35,7 @@ class Test_MO(unittest.TestCase):
         MO.set_posicion_MO(5,5)
         energia_inicial = MO.get_energia()
         print ("Energia inicial: ", energia_inicial)
-        MO.moverse(p_gestor_alimento)
+        MO.moverse(8, p_gestor_alimento)
         MO.comer(p_gestor_alimento)
         energia_final = MO.get_energia()
         print("Energia final: ", energia_final)
@@ -73,7 +73,7 @@ class Test_MO(unittest.TestCase):
         aumento_energia = False
         energia_inicial = MO.get_energia()
         p_gestor_alimento.agregar_alimento_en_posicion(20,20) 
-        MO.moverse(p_gestor_alimento)
+        MO.moverse(8, p_gestor_alimento)
         energia_final = MO.get_energia()
         if energia_inicial < energia_final:
                 aumento_energia = True
@@ -90,7 +90,7 @@ class Test_MO(unittest.TestCase):
         for i in range(10):
             movimiento = False
             pos_inicial = MO.get_posicion()
-            MO.moverse(p_gestor_alimento)
+            MO.moverse(8, p_gestor_alimento)
             pos_final = MO.get_posicion()
             print(pos_inicial, pos_final)
             if pos_inicial != pos_final:

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 import matplotlib.animation as animation
 
-
+#agregacion con mundo
 class InterfazModeloSimulacion:
     
     def __init__(self):

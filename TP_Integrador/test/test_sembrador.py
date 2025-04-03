@@ -3,18 +3,20 @@ from datos.parametros_de_simulacion import Parametros_de_Simulacion
 from modulos.gestor_de_alimento import Gestor_de_Alimento 
 import unittest
 
+ps = Parametros_de_Simulacion()
+
 class TestSembrador(unittest.TestCase):
     
     def setUp(self):
-        self.__sembrador = Sembrador()
+        self.__sembrador = Sembrador(ps)
         print('\nsetUp') 
         
     def test_mover_sembrador(self):
         sembrador = self.__sembrador
         mover = False
-        fila_inicial, columna_inicial = sembrador.devolver_posicion_sembrador()
+        fila_inicial, columna_inicial = sembrador.devolver_posicion()
         sembrador.movimiento_sembrador()
-        fila_final, columna_final = sembrador.devolver_posicion_sembrador()
+        fila_final, columna_final = sembrador.devolver_posicion()
         if fila_final != fila_inicial or columna_inicial != columna_final:
             mover = True
         self.assertTrue(mover)

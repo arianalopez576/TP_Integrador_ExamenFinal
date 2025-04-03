@@ -1,14 +1,9 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-matplotlib.use('TkAgg')
-
-from modulos.control_del_mundo import Mundo
-from datos.parametros_de_simulacion import Parametros_de_Simulacion
 
 import numpy as np
 
-ps = Parametros_de_Simulacion()
 
 class Animador:
     
@@ -35,9 +30,6 @@ class Animador:
         self._animation = animation.FuncAnimation(self._fig, self._func_ani, fargs=(self._scatter,), interval = self._interval)
         plt.show(block = False) 
     
-    def actualizar_dimensiones_animacion(self, cant_filas, cant_columnas):
-        self._ax.set_xlim(0,cant_filas)
-        self._ax.set_ylim(0,cant_columnas)
         
     def pausar(self):
         if self._animation is not None:
@@ -50,6 +42,10 @@ class Animador:
             self._animation.resume()
         else:
             print('Error, la animacion no comenzo')
+            
+    def actualizar_dimensiones_animacion(self, cant_filas, cant_columnas):
+        self._ax.set_xlim(0,cant_filas)
+        self._ax.set_ylim(0,cant_columnas)
     
     def existe_animacion(self):
         return self._animation is not None

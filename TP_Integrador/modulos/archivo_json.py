@@ -8,10 +8,6 @@ class Archivo_Json:
         pass
     
     def escribir_archi_json(self, p_nom_archi, p_datos):
-        #nuevo_json = open(p_nom_archi,"w")
-        #json.dump('Parametros de la simulacion:', nuevo_json)
-        #json.dump(p_datos, nuevo_json)
-        #nuevo_json.close()
 
         if '.json' not in p_nom_archi:
             p_nom_archi = p_nom_archi + '.json'
@@ -33,7 +29,7 @@ class Archivo_Json:
             print('El archivo no existe, o no se encuentra.')
     
     
-if __name__=="__main__":
-    archi_json = Archivo_Json()
-    datos = archi_json.leer_archi_json(r'C:\Users\Usuario\Desktop\ProgAvanzada\ExamenFinal_ProgAv\ExamenFinal\TP-3\pruebalectura.json')
-    print(datos)
+# if __name__=="__main__":
+#     archi_json = Archivo_Json()
+#     datos = archi_json.leer_archi_json(r'C:\Users\Usuario\Desktop\ProgAvanzada\ExamenFinal_ProgAv\ExamenFinal\TP-3\pruebalectura.json')
+#     print(datos)

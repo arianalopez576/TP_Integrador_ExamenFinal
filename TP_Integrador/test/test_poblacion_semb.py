@@ -1,13 +1,14 @@
 
+from datos.parametros_de_simulacion import Parametros_de_Simulacion  
 from modulos.poblacion_sembradores import Poblacion_Sembradores
 import unittest
 
-
+ps = Parametros_de_Simulacion()
 class Test_Poblacion_MO(unittest.TestCase):
     
     
     def setUp(self):
-        self.__poblacion_semb = Poblacion_Sembradores()
+        self.__poblacion_semb = Poblacion_Sembradores(ps)
         print ('\nsetUp')
         
     def test_verificar_tipo_lista_semb(self):

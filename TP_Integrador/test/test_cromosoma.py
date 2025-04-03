@@ -36,7 +36,7 @@ class TestCromosoma(unittest.TestCase):
         c2 = Cromosoma()
         
         cromo_hijo = c1.cruzar(c2)
-        datos_cromo = False #False son distintos
+        datos_cromo = False #los datos de los cromosomas son distintos
         
         if cromo_hijo.devolver_cromosoma() == c1.devolver_cromosoma() or cromo_hijo.devolver_cromosoma() == c2.devolver_cromosoma():
             datos_cromo = True

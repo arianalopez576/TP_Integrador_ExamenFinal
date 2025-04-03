@@ -3,6 +3,8 @@ import time
 from datetime import date
 import matplotlib.pyplot as plt
     
+#clase abstracta con metodo abstracto escribir_archivo
+#asociacion unidireccional con interfaz usuario, solo se escribe la info que le brinda
 class Archivo_Informe(ABC):
     ''' datos que se deben escribir en el informe
     Título.
