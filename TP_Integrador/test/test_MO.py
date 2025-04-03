@@ -13,8 +13,8 @@ class Test_MO(unittest.TestCase):
     
     
     def setUp(self):
-        self.__microorganismo = Microorganismo()
-        self.__nuevo_MO = Microorganismo()
+        self.__microorganismo = Microorganismo(parametros_de_simulacion)
+        self.__nuevo_MO = Microorganismo(parametros_de_simulacion)
         print ('\nsetUp')
         
     #verifica que la energía aumenta cuando el MO se alimenta
@@ -47,7 +47,7 @@ class Test_MO(unittest.TestCase):
     #verifica que el nuevo MO, producto de la reproduccion sea de tipo Microorganismo()        
     def test_tipo_nuevo_MO(self):
         MO = self.__microorganismo
-        MO1 = Microorganismo()
+        MO1 = Microorganismo(parametros_de_simulacion)
         self.nuevo_MO = MO.reproduccion(MO1)
         if type(self.nuevo_MO) == type(self.__microorganismo):
             pass

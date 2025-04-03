@@ -13,7 +13,7 @@ class Test_Poblacion_MO(unittest.TestCase):
         
     #verifica que la lista de MO contenga datos de tipo MO
     def test_verificar_tipo_MO(self):
-        MO_ejemplo = Microorganismo()
+        MO_ejemplo = Microorganismo(ps)
         for MO in self.__poblacion_MO.devolver_lista_MO():
             tipo = type(MO)
             self.assertEqual(tipo, type(MO_ejemplo))
